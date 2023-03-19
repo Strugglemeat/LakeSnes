@@ -11,13 +11,6 @@ Performance, although much better than my JS version, is still quite bad though,
 
 ## Compiling
 
-### MacOS
-
-- Make sure `clang` and `make` are available (`xcode-select --install`)
-- Download the SDL2 `.dmg` via the releases on the [SDL Github](https://github.com/libsdl-org/SDL)
-- Place the `SDL2.framework` found in the disk image in a subdirectory called `sdl2`
-- Run `make`
-
 ### Linux
 
 - Make sure `gcc` and `make` are available (`sudo apt install build-essential`)
@@ -25,8 +18,6 @@ Performance, although much better than my JS version, is still quite bad though,
 - Run `make`
 
 Note that these build are dependend on SDL2 being installed / found in `./sdl2`.
-
-Compiling on Windows will most likely require something like Cygwin/Mingw/Msys2, or WSL. This is left as an exercise for the reader (for now).
 
 ## Usage and controls
 
@@ -56,22 +47,9 @@ Additionally, the following command are available:
 | R   | Soft reset         |
 | E   | Hard reset         |
 | P   | Pause              |
-| O   | Frame advance      |
 | T   | Turbo              |
-| L   | Run one CPU cycle  |
-| K   | Run one SPC cycle* |
-| J   | Dumps some data    |
-
-*: Does not work yet.
 
 Alt+Enter can be used to toggle fullscreen mode.
-
-L will run one CPU cycle, and then logs the CPU state (opcode, registers, flags).
-K does not function yet, but is planned to do the same, but for the SPC.
-
-J currently dumps the 128K WRAM, 64K VRAM, 512B CGRAM, 544B OAM and 64K ARAM to a file called `dump.bin`.
-
-Save states and battery saving are not supported yet, but are planned.
 
 Minimizing or hiding the window can cause high CPU usage as this can cause v-sync to stop working.
 
